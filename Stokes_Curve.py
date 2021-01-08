@@ -5,6 +5,7 @@
 
 yourpath = r'C:\Users\hangu\OneDrive\Desktop\Test\Converted'
 
+import math
 import os
  
 def number_name(file_name):
@@ -29,8 +30,11 @@ md.close()
 
 #Create a new file containing the stokes_curve:
 new_file = open("stokes_curve.txt", "w")
+degree = 0
 for item in stokes_curve:
     print(item)
-    new_file.write(str(item)+'\n')
+    degree_rad = degree*(math.pi)/180
+    new_file.write(str(degree_rad) + ' ' + str(item)+'\n')
+    degree += 10
 new_file.close() 
 
